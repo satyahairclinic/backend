@@ -8,10 +8,6 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "0.10.41",
-    "npm": "1.4.29"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
