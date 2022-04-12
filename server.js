@@ -3,6 +3,23 @@ const router = require('./routes');
 const app = express()
 const DBConnect = require('./config/db')
 require('dotenv').config()
+const cors = require('cors')
+
+app.use(
+    cors({
+        origin: true,
+        optionsSuccessStatus: 200,
+        credentials: true,
+    })
+);
+app.options(
+    '*',
+    cors({
+        origin: true,
+        optionsSuccessStatus: 200,
+        credentials: true,
+    })
+);
 
 app.use(express.json());
 app.use(router)

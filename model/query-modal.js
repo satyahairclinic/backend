@@ -6,6 +6,7 @@ const queryModal = new mongoose.Schema({
     age: { type: String },
     phone: { type: String },
     message: { type: String },
+    status: { type: String }
 }, {
     timestamps: true
 })
