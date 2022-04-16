@@ -15,6 +15,17 @@ class FormController {
 
     }
 
+    async getAllLeads(req, res) {
+        try {
+            const leads = await Query.find()
+
+            res.status(200).json({ leads })
+        } catch (err) {
+            console.log(err)
+            res.status(500).json({ msg: 'Internal Server Error' })
+        }
+    }
+
 }
 
 module.exports = new FormController()
