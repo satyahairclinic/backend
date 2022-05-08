@@ -1,4 +1,5 @@
 const Query = require('../model/query-modal')
+const SkinQuery = require('../model/skin-query-modal')
 
 class FormController {
 
@@ -7,6 +8,19 @@ class FormController {
 
         try {
             const query = await Query.create({ name, email, phone, message, age, status })
+            res.status(200).json({ msg: 'Success', query })
+        } catch (err) {
+            console.log(err)
+            res.status(500).json({ msg: 'Internal Server Error' })
+        }
+
+    }
+
+    async skinEntry(req, res) {
+        const { name, email, phone, message, concern, treatment } = req.body;
+
+        try {
+            const query = await SkinQuery.create({ name, email, phone, message, concern, treatment })
             res.status(200).json({ msg: 'Success', query })
         } catch (err) {
             console.log(err)
